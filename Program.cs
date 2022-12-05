@@ -136,7 +136,8 @@ namespace Auto1
         {
             IWebElement newwindow = driver.FindElement(By.XPath("//button[@onclick= 'openWindow()']"));
             newwindow.Click();
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
 
             /*IWebElement practiceLink = driver.FindElement(By.XPath("//a[text()='Practice']"));
             practiceLink.Click();*/
@@ -148,7 +149,8 @@ namespace Auto1
             IWebElement switchwindow = driver.FindElement(By.Id("openwindow"));
             switchwindow.Click();
             Thread.Sleep(3000);
-            driver.SwitchTo().Window(driver.WindowHandles[0]);
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
         }
 
         public static void exercise6()
@@ -156,6 +158,8 @@ namespace Auto1
             IWebElement switchwindow = driver.FindElement(By.Id("opentab"));
             switchwindow.Click();
             Thread.Sleep(3000);
+            driver.SwitchTo().Window(driver.WindowHandles[1]);
+            driver.Close();
             driver.SwitchTo().Window(driver.WindowHandles[0]);
             Thread.Sleep(3000);
         }
